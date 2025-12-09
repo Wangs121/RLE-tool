@@ -135,7 +135,7 @@ function App() {
                </div>
              </div>
              
-             <div className="flex-1 relative">
+             <div className="flex-1 relative min-h-0">
                 {error ? (
                   <div className="absolute inset-0 flex items-center justify-center bg-slate-900/90 z-20 p-6 text-center">
                     <div className="bg-rose-500/10 border border-rose-500/50 rounded-xl p-6 max-w-md">
@@ -153,6 +153,7 @@ function App() {
                     title="输出数组" 
                     code={result ? result.cArrayOutput : ""} 
                     readOnly 
+                    language="c"
                   />
                 )}
 
@@ -161,6 +162,7 @@ function App() {
                     title="索引偏移表" 
                     code={result ? result.offsetTableOutput : ""} 
                     readOnly 
+                    language="c"
                   />
                 )}
 
@@ -169,6 +171,7 @@ function App() {
                      title="解码函数" 
                      code={result ? result.decoderCode : ""} 
                      readOnly 
+                     language="c"
                    />
                 )}
                 
