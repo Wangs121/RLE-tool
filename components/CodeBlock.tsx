@@ -12,13 +12,19 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'c' }) =>
       <Highlight theme={themes.vsDark} code={code} language={language as any}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={`${className} m-0 min-w-full whitespace-pre`} style={style}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+            {tokens.map((line, i) => {
+              const lineProps = getLineProps({ line, key: i });
+              const { key: _lk, ...restLine } = lineProps as any;
+              return (
+                <div key={i} {...restLine}>
+                  {line.map((token, j) => {
+                    const tokenProps = getTokenProps({ token, key: j });
+                    const { key: _tk, ...restToken } = tokenProps as any;
+                    return <span key={j} {...restToken} />;
+                  })}
+                </div>
+              );
+            })}
           </pre>
         )}
       </Highlight>

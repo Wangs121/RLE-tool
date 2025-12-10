@@ -4,6 +4,7 @@ import { Editor } from './components/Editor';
 import { EncodingMode, CompressResult, DataWidth } from './types';
 import { parseCArray, compressData } from './services/compressor';
 import { ArrowRight, Code2, Play, Activity, AlertCircle } from 'lucide-react';
+import GitHubCorners from '@uiw/react-github-corners';
 
 const DEFAULT_INPUT = `// 示例 1bpp 字符 'A'
 const unsigned char char_A[] = {
@@ -49,6 +50,15 @@ function App() {
 
   return (
     <div className="flex h-screen overflow-hidden bg-slate-950 text-slate-200 font-sans">
+      <GitHubCorners 
+        href="https://github.com/Wangs121/RLE-tool" 
+        position="right"
+        fixed
+        size={80}
+        bgColor="#0f172a" 
+        color="#fff" 
+        zIndex={50}
+      />
       {/* Sidebar */}
       <Settings 
         mode={mode} 
@@ -60,7 +70,7 @@ function App() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="h-16 border-b border-slate-800 bg-slate-950 flex items-center justify-between px-6 flex-shrink-0 z-10">
+        <header className="h-16 border-b border-slate-800 bg-slate-950 flex items-center justify-between px-6 pr-24 md:pr-28 flex-shrink-0 z-10">
           <div className="flex items-center gap-3">
             <div className="bg-indigo-600 rounded-lg p-1.5 shadow-lg shadow-indigo-500/20">
               <Code2 className="text-white w-6 h-6" />

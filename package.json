@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/runtime": "^7.28.4",
+    "@uiw/react-github-corners": "^1.5.16",
     "lucide-react": "^0.555.0",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.1",
